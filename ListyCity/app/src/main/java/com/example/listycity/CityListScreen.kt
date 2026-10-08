@@ -41,6 +41,7 @@ fun CityListScreen(
     var selectedCity by remember { mutableStateOf<City?>(null) }
     var editedCityName by remember { mutableStateOf("") }
     var editedProvinceName by remember { mutableStateOf("") }
+    var cityToRemove by remember { mutableStateOf<City?>(null) }
 
     Column(modifier = modifier.fillMaxSize()) {
         Row(
@@ -52,15 +53,18 @@ fun CityListScreen(
         ) {
             Button(
                 onClick = {
-                    val cityToUpdate = selectedCity
+                    var cityToRemove = selectedCity
                     if (
-                        cityToUpdate != null
+                        cityToRemove != null
                     ) {
                         onRemoveCity(
-                            cityToUpdate
+                            cityToRemove
                         )
                         selectedCity = null
+                        cityToRemove = null
                     }
+
+
                 }
             ) {
                 Text("delete")
