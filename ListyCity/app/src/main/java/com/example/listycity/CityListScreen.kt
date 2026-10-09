@@ -41,7 +41,6 @@ fun CityListScreen(
     var selectedCity by remember { mutableStateOf<City?>(null) }
     var editedCityName by remember { mutableStateOf("") }
     var editedProvinceName by remember { mutableStateOf("") }
-    var cityToRemove by remember { mutableStateOf<City?>(null) }
 
     Column(modifier = modifier.fillMaxSize()) {
         Row(
@@ -61,7 +60,6 @@ fun CityListScreen(
                             cityToRemove
                         )
                         selectedCity = null
-                        cityToRemove = null
                     }
 
 
