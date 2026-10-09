@@ -199,7 +199,7 @@ fun CityListScreen(
                 }
             }
         }
-    }
+    }//end of column
 }
 
 
